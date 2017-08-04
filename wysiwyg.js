@@ -22,17 +22,36 @@ let famousPeople = [
   ]; 
 
 let output = document.getElementById("output");
-let people = '';
 
-famousPeople.forEach(function(item){
-  people += `<div class="objectNumberOne">${item.name}</div>`;
 
-});
 
-output.innerHTML = people;
+for (let i = 0; i < famousPeople.length; i++) {
+
+  // Give each person element a unique identifier
+  output.innerHTML += `<div class="wholeCard" id="[i]">
+                      <h1 class="nameOfPeople">${famousPeople[i].name}</h1>
+                      <p class="description">${famousPeople[i].bio}</p>
+                      <img class="image" src="${famousPeople[i].image}">
+                      <p class="birth">Birth Year: ${famousPeople[i].birth}</p>
+                       </div>`;
+}
+
+let containerEl = document.getElementsByClassName("wholeCard");
+
+for (let j = 0; j < containerEl.length; j++) {
+  containerEl[j].addEventListener("click", function(event) {
+    containerEl[j].classList.toggle("background");
+  });
+};
+
+// output.innerHTML = people;
 // var counter = 0;
 // var outputEl = document.getElementById("output");
 // for (; counter < 4; counter++) {
 //   // Give each person element a unique identifier
 //   outputEl.innerHTML += `<div class="objectNumberOne" id="object1 ${famousPeople.name}"></div>`;
 // }
+
+let even = famousPeople.filter((people, index) => index % 2 === 0 );
+//item, index, array - forEach
+console.log(even);

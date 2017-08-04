@@ -1,0 +1,29 @@
+#output {
+	display: block;
+	display: flex;
+}
+
+img {
+	width: 50%;
+	margin-left: 22%;
+}
+
+.wholeCard {
+	border: 1px solid black;
+	height: 400px;
+	width: 300px;
+	margin: 2%;
+	box-shadow: 5px 5px 1px lightgray;
+}
+
+h1, p {
+	text-align: center;
+}
+
+h1 {
+	color: red;
+}
+
+.background {
+	font-size: 3em;
+}
