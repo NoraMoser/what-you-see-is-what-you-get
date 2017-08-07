@@ -2,7 +2,7 @@ console.log("hi");
 
 let famousPeople = [
   {
-  name: "Haruto Murakami",
+  name: "Haruki Murakami",
   bio: "Haruki Murakami is a Japanese writer. His books and stories have been bestsellers in Japan as well as internationally, with his work being translated into 50 languages and selling millions of copies outside his native country.",
   image: "https://static01.nyt.com/images/2011/10/23/magazine/23murakami1_span/23murakami1_span-jumbo.jpg",
   birth: 1949
@@ -37,21 +37,46 @@ for (let i = 0; i < famousPeople.length; i++) {
 }
 
 let containerEl = document.getElementsByClassName("wholeCard");
+// let even = famousPeople.filter((people, index) => index % 2 === 0);
+let input = document.getElementById("textInput");
+let titles = document.getElementsByClassName("nameOfPeople");
+let bio = document.getElementsByClassName("description");
+// console.log(even);
 
 for (let j = 0; j < containerEl.length; j++) {
-  containerEl[j].addEventListener("click", function(event) {
-    containerEl[j].classList.toggle("background");
+  containerEl[0].addEventListener("click", function(event) {
+    containerEl[0].classList.toggle("background");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+    bio[0].innerHTML = event.target.value;
+    if (event.which === 13) {
+      input.value = "";
+    }
+  });
+  });
+  containerEl[1].addEventListener("click", function(event) {
+    containerEl[1].classList.toggle("background");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+    bio[1].innerHTML = event.target.value;
+    if (event.which === 13) {
+      input.value = "";
+    }
+  });
+  });
+  containerEl[2].addEventListener("click", function(event) {
+    containerEl[2].classList.toggle("background");
+    input.focus();
+    input.addEventListener("keyup", function(event) {
+    bio[2].innerHTML = event.target.value;
+    if (event.which === 13) {
+      input.value = "";
+    }
+  });
   });
 };
 
-// output.innerHTML = people;
-// var counter = 0;
-// var outputEl = document.getElementById("output");
-// for (; counter < 4; counter++) {
-//   // Give each person element a unique identifier
-//   outputEl.innerHTML += `<div class="objectNumberOne" id="object1 ${famousPeople.name}"></div>`;
-// }
 
-let even = famousPeople.filter((people, index) => index % 2 === 0 );
-//item, index, array - forEach
-console.log(even);
+
+
+

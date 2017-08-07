@@ -25,5 +25,17 @@ h1 {
 }
 
 .background {
+	border: 3px dotted hotpink;
+}
+
+.wholeCard:nth-child(odd){
+	background-color: lightyellow;
+}
+
+.wholeCard:nth-child(even){
+	background-color: lightblue;
+}
+
+.whatever {
 	font-size: 3em;
 }
