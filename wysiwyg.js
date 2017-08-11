@@ -41,42 +41,55 @@ let containerEl = document.getElementsByClassName("wholeCard");
 let input = document.getElementById("textInput");
 let titles = document.getElementsByClassName("nameOfPeople");
 let bio = document.getElementsByClassName("description");
+
+// function removeHandler() {
+//     containerEl[0].removeEventListener("click", function(event));
+// }
 // console.log(even);
 
 for (let j = 0; j < containerEl.length; j++) {
   containerEl[0].addEventListener("click", function(event) {
+    bio[0].classList.add("active"); 
     containerEl[0].classList.toggle("background");
     input.focus();
     input.addEventListener("keyup", function(event) {
-    bio[0].innerHTML = event.target.value;
+      if (bio[0].classList.contains("active") === true) {
+        bio[0].innerHTML = event.target.value;
+      } 
     if (event.which === 13) {
+      bio[0].classList.remove("active");
       input.value = "";
+      
     }
   });
   });
   containerEl[1].addEventListener("click", function(event) {
     containerEl[1].classList.toggle("background");
+    bio[1].classList.add("active");
     input.focus();
     input.addEventListener("keyup", function(event) {
-    bio[1].innerHTML = event.target.value;
+      if (bio[1].classList.contains("active") === true) {
+        bio[1].innerHTML = event.target.value;
+      } 
     if (event.which === 13) {
+      bio[1].classList.remove("active");
       input.value = "";
+      
     }
   });
   });
   containerEl[2].addEventListener("click", function(event) {
     containerEl[2].classList.toggle("background");
+    bio[2].classList.add("active");
     input.focus();
     input.addEventListener("keyup", function(event) {
-    bio[2].innerHTML = event.target.value;
+      if (bio[2].classList.contains("active") === true) {
+        bio[2].innerHTML = event.target.value;
+      }
     if (event.which === 13) {
+      bio[1].classList.remove("active");
       input.value = "";
     }
   });
   });
 };
-
-
-
-
-
